@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Fraunces:wght@700;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hamburger */
+.bar {
+  display: block;
+  width: 25px;
+  height: 5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  
+}
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Navbar */
+
+@layer components {
+  .nav-link {
+    @apply hover:border-b-[3px] hover:border-white hover:pb-[1rem] md:hover:pb-[2.38rem] transition-all duration-300 ease-in-out;
+  }
+  /* Destination Link Hover Effects */
+
+  .destination-link {
+    @apply hover:border-b-[3px] hover:border-white hover:pb-[0.5rem] transition-all duration-300 ease-in-out;
+  }
+}
+
+body.page-transition {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    
+    .nav-menu.transition {
+      transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+    
+
+
+
+    
+.crew-link {
+     display: inline-block;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background-color: #80808080;
+  
+  }
+    
+
+/* ANIMATIONS */
+
+ /* Home Page Animations */ 
+
+.space-text {
+  animation: slideInFromTop 1s ease-in;
+}
+.explore {
+  animation: slideInFromBottom 1s ease-in;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+       transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+       transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromTop {
+  0% {
+       transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromBottom {
+  0% {
+       transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Destination Spin Animation */
+.moon {
+    animation: spin 10s linear infinite; 
+   }
+
+   @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+/* media queries */
+
+@media (min-width: 1024px) {
+  .space-text {
+  animation: slideInFromLeft 1s ease-in;
+}
+.explore {
+  animation: slideInFromRight 1s ease-in;
+}
+
+}
+
+
+
